@@ -17,19 +17,21 @@ class ToastsState extends State<Toasts>{
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    return Scaffold(
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            CustomButton("Success Toast", () => onSuccessToastClick),
-            SizedBox(height: 50),
-            CustomButton("Error Toast", () => onErrorToastClick),
-            SizedBox(height: 50),
-            CustomButton("Warning Toast", () => onWarningToastClick),
-            SizedBox(height: 50),
-            CustomButton("Info Toast", () => onInfoToastClick),
-          ],
+    return OKToast(
+      child: Scaffold(
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              CustomButton("Success Toast", Colors.amber, () => onSuccessToastClick()),
+              SizedBox(height: 50),
+              CustomButton("Error Toast", Colors.amber, () => onErrorToastClick()),
+              SizedBox(height: 50),
+              CustomButton("Warning Toast", Colors.amber, () => onWarningToastClick()),
+              SizedBox(height: 50),
+              CustomButton("Info Toast", Colors.amber, () => onInfoToastClick()),
+            ],
+          ),
         ),
       ),
     );
@@ -39,12 +41,12 @@ class ToastsState extends State<Toasts>{
     successToast("Success Message");
 
   var onErrorToastClick = () =>
-    errorToast("Success Message");
+    errorToast("Error Message");
 
   var onWarningToastClick = () =>
-    warningToast("Success Message");
+    warningToast("Warning Message");
 
   var onInfoToastClick = () =>
-    infoToast("Success Message");
+    infoToast("Info Message");
 
 }

@@ -24,7 +24,10 @@ class DialogsState extends State<Dialogs> {
 
   var onConfirmationDialogClick = (context) => confirmationDialog(
       context, "Are you sure want to delete this?",
-      title: "Confirm", negativeText: "Cancel", positiveText: "Delete", positiveAction: () {});
+      title: "Confirm",
+      negativeText: "Cancel",
+      positiveText: "Delete",
+      positiveAction: () {});
 
   var onWaitDialogClick = (context) => waitDialog(context,
       message: "Please Wait...", duration: Duration(seconds: 3));
@@ -40,9 +43,7 @@ class DialogsState extends State<Dialogs> {
         positiveAction: (value) {
           print("Submit: $value");
         },
-        negativeAction: (value) {
-
-        },
+        negativeAction: (value) {},
         neutralAction: () {
           print("neutral action");
         },
@@ -72,7 +73,7 @@ class DialogsState extends State<Dialogs> {
       context,
       "Select Favourite Player",
       listPlayers,
-      (item) => successToast(item.toString()));
+      (item) => print(item));
 
   static var selectedItems = Set<SimpleItem>();
 
@@ -83,11 +84,8 @@ class DialogsState extends State<Dialogs> {
       selectedItems,
       (values) => selectedItems = values);
 
-  var onRadioListDialogClick = (context) => radioListDialog(
-      context,
-      "Select Favourite Player",
-      listPlayers,
-      (item) => print(item.toString()));
+  var onRadioListDialogClick = (context) => radioListDialog(context,
+      "Select Favourite Player", listPlayers, (item) => print(item));
 
   @override
   Widget build(BuildContext context) {
@@ -100,34 +98,38 @@ class DialogsState extends State<Dialogs> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
               SizedBox(height: 30),
-              CustomButton(
-                  "Success Dialog", () => onSuccessDialogClick(context)),
+              CustomButton("Success Dialog", Colors.amber,
+                  () => onSuccessDialogClick(context)),
               SizedBox(height: 30),
-              CustomButton("Error Dialog", () => onErrorDialogClick(context)),
+              CustomButton("Error Dialog", Colors.amber,
+                  () => onErrorDialogClick(context)),
               SizedBox(height: 30),
-              CustomButton(
-                  "Warning Dialog", () => onWarningDialogClick(context)),
+              CustomButton("Warning Dialog", Colors.amber,
+                  () => onWarningDialogClick(context)),
               SizedBox(height: 30),
-              CustomButton("Info Dialog", () => onInfoDialogClick(context)),
+              CustomButton("Info Dialog", Colors.amber,
+                  () => onInfoDialogClick(context)),
               SizedBox(height: 30),
-              CustomButton("Confirmation Dialog",
+              CustomButton("Confirmation Dialog", Colors.amber,
                   () => onConfirmationDialogClick(context)),
               SizedBox(height: 30),
-              CustomButton("Wait Dialog", () => onWaitDialogClick(context)),
+              CustomButton("Wait Dialog", Colors.amber,
+                  () => onWaitDialogClick(context)),
               SizedBox(height: 30),
-              CustomButton("Single Input Dialog",
+              CustomButton("Single Input Dialog", Colors.amber,
                   () => onSingleInputDialogClick(context)),
               SizedBox(height: 30),
-              CustomButton("Option Dialog", () => onOptionDialogClick(context)),
+              CustomButton("Option Dialog", Colors.amber,
+                  () => onOptionDialogClick(context)),
               SizedBox(height: 30),
-              CustomButton("Single Select Dialog",
+              CustomButton("Single Select Dialog", Colors.amber,
                   () => onSingleSelectDialogClick(context)),
               SizedBox(height: 30),
-              CustomButton("Multi Select Dialog",
+              CustomButton("Multi Select Dialog", Colors.amber,
                   () => onMultiSelectDialogClick(context)),
               SizedBox(height: 30),
-              CustomButton(
-                  "Radio Dialog", () => onRadioListDialogClick(context)),
+              CustomButton("Radio Dialog", Colors.amber,
+                  () => onRadioListDialogClick(context)),
               SizedBox(height: 30),
             ],
           ),
