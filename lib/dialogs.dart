@@ -36,20 +36,16 @@ class DialogsState extends State<Dialogs> {
     );
   }
 
-  var onSuccessDialogClick = (context) {
+  var onSuccessDialogClick = (context) =>
       successDialog(context, "Success Message");
-  };
 
-  var onErrorDialogClick = (context) {
+  var onErrorDialogClick = (context) =>
     errorDialog(context, "Error Message");
-  };
 
-  var onWarningDialogClick = (context) {
+  var onWarningDialogClick = (context) =>
     warningDialog(context, "Warning Message");
-  };
 
-  var onInfoDialogClick = (context) {
+  var onInfoDialogClick = (context) =>
     infoDialog(context, "Info Message");
-  };
 
 }

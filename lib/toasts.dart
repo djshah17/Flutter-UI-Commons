@@ -35,20 +35,16 @@ class ToastsState extends State<Toasts>{
     );
   }
 
-  var onSuccessToastClick = () {
+  var onSuccessToastClick = () =>
     successToast("Success Message");
-  };
 
-  var onErrorToastClick = () {
+  var onErrorToastClick = () =>
     errorToast("Success Message");
-  };
 
-  var onWarningToastClick = () {
+  var onWarningToastClick = () =>
     warningToast("Success Message");
-  };
 
-  var onInfoToastClick = () {
+  var onInfoToastClick = () =>
     infoToast("Success Message");
-  };
 
 }

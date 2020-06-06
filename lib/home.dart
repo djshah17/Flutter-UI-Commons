@@ -26,16 +26,13 @@ class Home extends StatelessWidget {
     ));
   }
 
-   var onDialogsClick = (context) {
+   var onDialogsClick = (context) =>
      Navigator.push(context, MaterialPageRoute(builder: (_) => Dialogs()));
-   };
 
-  var onToastsClick = (context) {
+  var onToastsClick = (context) =>
     Navigator.push(context, MaterialPageRoute(builder: (_) => Toasts()));
-  };
 
-  var onLoadingClick = (context) {
+  var onLoadingClick = (context) =>
     Navigator.push(context, MaterialPageRoute(builder: (_) => Loading()));
-  };
 
 }
